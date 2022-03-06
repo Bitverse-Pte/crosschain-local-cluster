@@ -31,45 +31,5 @@ function download_xibc() {
   fi
 }
 
-function update_env(){
-  source ../eth-tele/env_var/variable.sh
-}
-
-function tool_check() {
-  while true; do
-  if [ "$1" = "LIGHT_CLIENT_GEN_VALHASH_ADDRESS" ]; then
-    yarn hardhat deployLibraries --network $ETH_NETWORK_NAME
-  fi
-
-  if [ "$1" = "ACCESS_MANAGER_ADDRESS" ]; then
-    yarn hardhat deployAcessManager --network $ETH_NETWORK_NAME --wallet $SUPER_ADMIN
-  fi
-
-
-  grep $1 env.txt
-  if [ "$?" = "0" ]; then
-    break
-  fi
-  done
-
-  echo "deploy $1 success!"
-  source env.txt
-}
-
-function deploy_base_on_eth() {
-    echo "wenbin"
-    cd xibc-contracts/evm
-
-    tool_check LIGHT_CLIENT_GEN_VALHASH_ADDRESS
-    tool_check ACCESS_MANAGER_ADDRESS
-}
 
 download_xibc
-
-update_env
-
-deploy_base_on_eth
-
-
-# exit to pre path
-cd cd ../../../
