@@ -37,12 +37,21 @@ function update_env(){
 
 function tool_check() {
   while true; do
-  yarn hardhat deployLibraries --network $ETH_NETWORK_NAME
+  if [ "$1" = "LIGHT_CLIENT_GEN_VALHASH_ADDRESS" ]; then
+    yarn hardhat deployLibraries --network $ETH_NETWORK_NAME
+  fi
+
+  if [ "$1" = "ACCESS_MANAGER_ADDRESS" ]; then
+    yarn hardhat deployAcessManager --network $ETH_NETWORK_NAME --wallet $SUPER_ADMIN
+  fi
+
+
   grep $1 env.txt
   if [ "$?" = "0" ]; then
     break
   fi
   done
+
   echo "deploy $1 success!"
   source env.txt
 }
@@ -52,6 +61,7 @@ function deploy_base_on_eth() {
     cd xibc-contracts/evm
 
     tool_check LIGHT_CLIENT_GEN_VALHASH_ADDRESS
+    tool_check ACCESS_MANAGER_ADDRESS
 }
 
 download_xibc
@@ -62,4 +72,4 @@ deploy_base_on_eth
 
 
 # exit to pre path
-cd ../eth-tele
+cd cd ../../../
