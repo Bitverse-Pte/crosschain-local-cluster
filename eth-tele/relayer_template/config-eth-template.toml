@@ -1,0 +1,78 @@
+[App]
+channel_types = ["tendermint_and_eth"]
+Env = "dev"
+log_level = "debug"
+
+[log]
+log_file_name = "teleport-relayer"
+logmax_age = 365
+logrotation_time = 24
+
+[Chain]
+
+[Chain.Dest]
+chain_type = "eth"
+relay_frequency = 5
+enable = true
+
+[Chain.Dest.Cache]
+filename = "rinkeby"
+start_height = 10138845
+
+[Chain.Dest.Eth]
+chain_id = 4
+chain_name = "rinkeby"
+gas_limit = 5100000
+max_gas_price = 6000000000
+tip_coefficient = 0.2
+#uri = "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
+uri = "http://localhost:9545"
+Update_client_frequency = 2
+query_filter = ""
+
+[Chain.Dest.Eth.Contracts]
+
+[Chain.Dest.Eth.Contracts.Ack_packet]
+Addr = "0xba8174c2163bbd2cb08407c954dd14a1b7c1f0c5"
+Opt_priv_key = "2C47DAD44BE377EF09C50CCFB5C1EC9389D337CA7F68F056D0629A8EA622F142"
+Topic = "AckWritten((uint64,string,string,string,string[],bytes[]),bytes)"
+
+[Chain.Dest.Eth.Contracts.Client]
+Addr = "0xe6941a40723dd08bf4ce55c64c837a58ae62a623"
+Opt_priv_key = "2C47DAD44BE377EF09C50CCFB5C1EC9389D337CA7F68F056D0629A8EA622F142"
+Topic = ""
+
+[Chain.Dest.Eth.Contracts.Packet]
+Addr = "0xba8174c2163bbd2cb08407c954dd14a1b7c1f0c5"
+Opt_priv_key = "2C47DAD44BE377EF09C50CCFB5C1EC9389D337CA7F68F056D0629A8EA622F142"
+Topic = "PacketSent((uint64,string,string,string,string[],bytes[]))"
+
+[Chain.Source]
+Chain_type = "tendermint"
+relay_frequency = 1
+enable = true
+
+[Chain.Source.Cache]
+Filename = "tenRinkeby"
+start_height = 7070
+
+[Chain.Source.Tendermint]
+Chain_id = "teleport_7001-1"
+Chain_name = "teleport"
+Clean_packet_enabled = false
+Gas = 0
+#grpc_addr = "abd46ec6e28754f0ab2aae29deaa0c11-1510914274.ap-southeast-1.elb.amazonaws.com:9090"
+grpc_addr = "10.41.20.10:9090"
+request_timeout = 100
+update_client_frequency = 1
+query_filter = "ack"
+
+[Chain.Source.Tendermint.Fee]
+Amount = 50000000000000000
+Denom = "atele"
+
+[Chain.Source.Tendermint.Key]
+Name = "node0"
+Password = "1234567890"
+#mnemonic = "rough poem blind olympic talent turtle trophy robot grape delay kitten above assist act build fiction hat pigeon venue plate okay dignity eight orphan"
+mnemonic = "sure pitch kitten ill tag jazz code baby scale dilemma soap evidence siren hub stairs street merry kick such place flag inside question used"
