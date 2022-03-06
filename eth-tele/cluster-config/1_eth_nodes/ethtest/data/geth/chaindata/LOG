@@ -1,0 +1,8 @@
+=============== Mar 5, 2022 (CST) ===============
+13:43:57.491671 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:43:57.494093 db@open opening
+13:43:57.494686 version@stat F·[] S·0B[] Sc·[]
+13:43:57.495559 db@janitor F·2 G·0
+13:43:57.495600 db@open done T·1.473312ms
+13:43:57.496146 db@close closing
+13:43:57.496203 db@close done T·55.734µs
