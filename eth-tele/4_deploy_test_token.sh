@@ -64,10 +64,6 @@ deploy_token_on_tele
 rm -rf ../../../eth-tele/env_var/env_token.txt
 mv env.txt ../../../eth-tele/env_var/env_token.txt
 
-## bond tokens
-yarn hardhat bindToken --transfer $TRANSFER_ADDRESS \
---address $ETHTELE --oritoken 0x0000000000000000000000000000000000000000 \
---orichain teleport --network $ETH_NETWORK_NAME
 
 cd ../../../eth-tele
 source env_var/env_token.txt

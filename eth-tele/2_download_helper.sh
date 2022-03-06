@@ -9,7 +9,7 @@ function download_xibc() {
     echo "文件夹不存在"
     git clone git@github.com:teleport-network/xibc-contracts.git
     cd xibc-contracts
-    git checkout  auto-deploy
+    git checkout $XIBC_CONTRACTS_BRANCH
     cd evm && yarn && yarn compile
     mv  hardhat.config.ts hardhat.config.bak.ts
     cd ../erc20 && yarn && yarn compile
@@ -33,3 +33,5 @@ function download_xibc() {
 
 
 download_xibc
+
+cd ../eth-tele

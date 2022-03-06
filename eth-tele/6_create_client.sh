@@ -28,7 +28,7 @@ function crate_client_on_tele() {
     relayer init
     relayer genFiles eth ethmock $ETH_CHAIN_ID $ETH_CHAIN_URL --packet $PACKET_ADDRESS
     # generate tendemrint client state
-    relayer genFiles tendermint teleport teleport_7001-1 localhost:9090 400
+    relayer genFiles tendermint teleport teleport_7001-1 localhost:9090 200
 
 
     ### client-create

@@ -14,4 +14,7 @@ export TELE_NETWORK_NAME=teleport
 export TELE_CHAIN_NAME=teleport
 export VOTING_PERIOD=60
 
+# xibc_contracts branch
+export XIBC_CONTRACTS_BRANCH=auto-deploy
+
 
