@@ -1,0 +1,51 @@
+# This is a TOML config file.
+# For more information, see https://github.com/toml_lang/toml
+###############################################################################
+###                           Base Configuration                            ###
+###############################################################################
+[base]
+# the base directory for storing the data, tss localSaveData etc.
+base_dir = "/root/.tssnode"
+# the preParamFile for tss job
+pre_param_file = ""
+# listening port for p2p communication
+p2p_port = "8001"
+# bootstrap peers the node is going to connecting to once the node started
+# format: /ip4/${ip}/tcp/${port}/p2p/${peerID},..
+# the self peerID can be checked via command of 'tssnode keys parse-peer-id -h '
+bootstrap_peers = "/ip4/127.0.0.1/tcp/8000/p2p/16Uiu2HAmH7dA3k1QGqyX5nESS6nxrFREHRFwpFgSUznic5qxDM2g,/ip4/127.0.0.1/tcp/8002/p2p/16Uiu2HAm8SqKnzGANggQJ7his3BbDYZGnjdda71JRRGT33iQz3Zi,/ip4/127.0.0.1/tcp/8003/p2p/16Uiu2HAkxAb1So8Y9Aba1d4Uu2qcnTknFuJ1pdngPQjJc1sghZbe"
+
+# timeout setting during tss job
+join_party_timeout = "60s"
+key_gen_timeout = "60s"
+key_sign_timeout = "60s"
+pre_param_timeout = "5m0s"
+###############################################################################
+###                           Start Configuration                           ###
+###############################################################################
+[start]
+src_chain = "teleport"
+src_chain_url = "localhost:9090"
+src_chain_id = "teleport_7001-1"
+dst_chain = "eth"
+dst_chain_alias="ethmock"
+dst_chain_url = "http://localhost:9000"
+dst_chain_id = "3133789"
+dst_chain_contract = "0xba8174c2163bbd2cb08407c954dd14a1b7c1f0c5"
+# database directory; default: 'base_dir' will be used
+db_dir = "/root/.tssnode/db"
+###############################################################################
+###                           Key Configuration                             ###
+###############################################################################
+[key]
+# The private key for identifying the node, it should be hex string here without '0x'.
+# It is unsafe to put the raw private key here in the file, it would be nice to
+# set it to environment with the prefix 'TSS', export TSS_KEY_PRIVATE_KEY="981a3e...."
+# or it is recommended to store the private key into keyring, you can checkout with 'tssnode keys -h'.
+private_key = "2052F145E8E7CBA2683DAB1FBC9BAB5162CE59C541BEB478ADBBA56B56ACAA4A"
+# the name stored in the keyring
+keyring_name = ""
+# keyring directory; if omitted, the default 'base_dir' directory will be used
+keyring_dir = "/root/.tssnode"
+# keyring backend(os|file|test) default: os
+keyring_backend = "os"

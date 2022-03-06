@@ -1,0 +1,25 @@
+[db]
+
+url = ""
+user = "root"
+password = "123456"
+name = ""
+
+[api]
+
+addr = ":9000"
+
+[eth]
+
+enable = true
+tss_client_address = "0x41076536D9A5b58c9Da94C2b341Ea5258B9De0C1"
+url = "http://localhost:9545"
+
+[tele]
+enable = false
+url = ""
+
+## the simulation config only works when the service is runing on simulation mode
+[simulation]
+pool_pub_key = ""
+party_pub_keys = ""
