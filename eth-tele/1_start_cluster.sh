@@ -27,3 +27,5 @@ function startTele() {
 startEth
 startTele
 
+# exit to pre path
+cd ..
