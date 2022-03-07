@@ -60,6 +60,7 @@ function crate_tss_client_on_tele() {
 }
 
 function create_client_on_eth(){
+  cd ../helper/xibc-contracts/evm
    yarn hardhat createTssCLient --chain teleport  \
    --client 0x7f5ae538c4f187c0987345c948d6133449d2b549   \
    --pubkey 0xbfeae69c005221660bb8e20c11cc7bd3b4b8f3e85ef0356ed51905eaa172fcdd5480020eecb7fe85cd2aec618d2165f90e8b6480340f7273332206bf7d34d2f3  \
@@ -73,7 +74,6 @@ create_client_on_eth
 
 # exit to pre path
 cd ../../../eth-tele
-
 
 
 function startTssNode(){
