@@ -71,7 +71,7 @@ function tool_check() {
 
     # loop 5 times, or break
     if [ "$temp" = "5" ]; then
-      break
+      exit 0
     fi
 
     # deploy
