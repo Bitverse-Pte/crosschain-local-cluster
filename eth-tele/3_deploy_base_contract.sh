@@ -21,6 +21,10 @@ function hardhat_deploy_base(){
     yarn hardhat deployTendermint --network $ETH_NETWORK_NAME
   fi
 
+  if [ "$1" = "TSS_CLIENT" ]; then
+    yarn hardhat deployTssClient --network $ETH_NETWORK_NAME
+  fi
+
   if [ "$1" = "ROUTING_ADDRESS" ]; then
     yarn hardhat deployRouting --network $ETH_NETWORK_NAME
   fi
@@ -94,6 +98,9 @@ function deploy_base_on_eth() {
     tool_check ACCESS_MANAGER_ADDRESS
     tool_check CLIENT_MANAGER_ADDRESS
     tool_check TENDERMINT_CLIENT
+
+    tool_check TSS_CLIENT
+
     tool_check ROUTING_ADDRESS
     tool_check PACKET_ADDRESS
     tool_check TRANSFER_ADDRESS
