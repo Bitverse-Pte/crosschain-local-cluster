@@ -18,3 +18,5 @@ export VOTING_PERIOD=60
 export XIBC_CONTRACTS_BRANCH=auto-deploy
 
 
+# tss_bridge branch
+export TSS_BRIDGE_BRANCH=e1569461e40260ab47fc9a8d9fa466ab2526ef99

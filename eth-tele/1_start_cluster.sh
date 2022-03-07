@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker rm -f $(docker ps -aq)
+docker rm tele0 eth0
 
 
 # start eth private chain nodes
@@ -28,4 +28,4 @@ startEth
 startTele
 
 # exit to pre path
-cd ..
+cd ../..
