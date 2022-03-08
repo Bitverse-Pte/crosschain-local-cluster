@@ -9,4 +9,4 @@ export ETH_CHAIN_ID=4
 export ETH_CHAIN_URL=https://rinkeby.infura.io/v3/023f2af0f670457d9c4ea9cb524f0810
 
 
-# account address:
+# account address:0x66d5f082726a05a9b409ce1de4e06b6ad8d5cb0e

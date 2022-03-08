@@ -7,8 +7,8 @@ function update_env(){
   rm -rf ../helper/xibc-contracts/evm/hardhat.config.ts
   cp -r hardhat-config/hardhat.config.evm.ts  ../helper/xibc-contracts/evm/hardhat.config.ts
 
-  rm -rf ../helper/xibc-contracts/evm/hardhat.config.ts
-  cp -r hardhat-config/hardhat.config.erc20.ts ../helper/xibc-contracts/evm/hardhat.config.ts
+  rm -rf ../helper/xibc-contracts/erc20/hardhat.config.ts
+  cp -r hardhat-config/hardhat.config.erc20.ts ../helper/xibc-contracts/erc20/hardhat.config.ts
 
   cd ../helper/xibc-contracts/evm
 }
