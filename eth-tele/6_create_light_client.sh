@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 function  voteProposal(){
   for ((i=0; i<=0; i++))
   do
