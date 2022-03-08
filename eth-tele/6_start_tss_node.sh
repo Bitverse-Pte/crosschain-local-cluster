@@ -41,7 +41,6 @@ function startTssNode(){
 
 }
 
-sleep 20
 
 function queryPubkey(){
   #!/bin/bash
@@ -66,7 +65,6 @@ function queryPubkey(){
 change_relayer_config
 startTssNode
 
-sleep 10
-
+sleep 30
 
 queryPubkey

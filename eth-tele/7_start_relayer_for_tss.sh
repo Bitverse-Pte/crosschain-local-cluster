@@ -27,10 +27,6 @@ function startTssNode(){
   docker run -itd --net host --name=tssrelayd -v ~/tssconfig/:/root/tssconfig -v ~/go/bin/relayd:/usr/bin/relayd ubuntu:20.04 relayd --config /root/tssconfig/relayd_config.toml
 }
 
-
-
-
-
 function  voteProposal(){
   for ((i=0; i<=0; i++))
   do
@@ -57,9 +53,9 @@ function create_client_on_eth(){
   # part-pubkey doesn't need to change
    yarn hardhat createTssCLient --chain teleport  \
    --client $TSS_CLIENT   \
-   --pubkey 0xc785267eb23ae682d5e5df4f2cace643780e1bdd952002af7494a79a299e8e8bc2e8d2ff11ef853850c266987213c515e473a2a04186aa169f21c61941b2306d  \
+   --pubkey 0xce03272bced9049b1fe60dc7f4e90a94b7949f13ed708fe150fb8daf1bc75bd4a2fe4d8c671e20073d72e9a53148fd92f8b8a74a48e15ee3baf9d6bf213317ff  \
    --partpubkeys [0x42417732b0e10b29aa8c5284c58136ac6726cbc1b5afc8ace6d6c4b03274cd01310b958a6dc5b27f2c1ad5c6595bffeac951c8407947d05166e687724d3890f7,0xa926c961ab71a72466faa6abef8074e6530f4c56087c43087ab92da441cbb1e9d24dfc12a5e0b4a686897e50ffa9977b3c3eb13870dcd44335287c0777c71489,0xc17413bbdf839a3732af84f61993c9a09d71f33a68f6fbf05ce53b66b0954929943184d65d8d02c11b7a70904805bcca6e3f3749d95e6438b168f2ed55768310,0x28b5ba326397f2c0f689908bcf4fe198d842739441471fa96e43d4cdd495d9c9f138fed315b3744300fa1dd5599a9e21d12264f97b094f3a5f4b84be120a1c6a] \
-   --pooladdress 0xa8c4edf2a765229ca27bfb32c688e61c2f457ee3  --network $ETH_NETWORK_NAME
+   --pooladdress 0xf822ec5c3a4142fb33d3e1ebbcb99dd50c1e6d1e  --network $ETH_NETWORK_NAME
 #
 #   yarn hardhat createTssCLient --chain teleport  \
 #   --client 0x7f5ae538c4f187c0987345c948d6133449d2b549   \
@@ -74,10 +70,8 @@ function crate_tss_client_on_tele() {
     ## generate files
     relayer init
     # copy tss file
-    echo "tss file begin"
     cp -r tss_config/tss_clientState.json ~/.teleport-relayer/
     cp -r tss_config/tss_consensusState.json ~/.teleport-relayer/
-    echo "tss file end"
 
     ### client-create
     teleport tx gov submit-proposal client-create \
@@ -88,7 +82,7 @@ function crate_tss_client_on_tele() {
       -y -b block --title "test" --description "test"  \
       --gas auto --fees 25000000000000000000atele --node tcp://localhost:26657
 
-    voting 1
+    voting 2
 
     ### register-trace  0x1000...3
     teleport tx gov submit-proposal \
@@ -100,7 +94,7 @@ function crate_tss_client_on_tele() {
        --node tcp://localhost:26657 --gas auto  --fees 2500000000000000000atele
 
     ### vote for this proposal
-    voting 2
+    voting 3
 }
 
 crate_tss_client_on_tele
