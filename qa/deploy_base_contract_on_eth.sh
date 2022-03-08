@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function update_env(){
-  source env_var/bsc-testnet.txt
+  source env_var/rinkeby
 }
 
 function hardhat_deploy_base(){
@@ -79,7 +79,7 @@ function tool_check() {
 }
 
 function deploy_base_on_eth() {
-    cd ../helper/xibc-contracts-local/evm
+    cd ../helper/xibc-contracts/evm
 
     tool_check LIGHT_CLIENT_GEN_VALHASH_ADDRESS
     tool_check ACCESS_MANAGER_ADDRESS
@@ -100,8 +100,8 @@ update_env
 
 deploy_base_on_eth
 
-rm -rf ../../../eth-tele/env.txt
-mv env.txt ../../../eth-tele/env_var
+rm -rf ../../../qa/rinkeby.txt
+mv env.txt ../../../qa/rinkeby.txt
 
 # exit to pre path
-cd  ../../../eth-tele
+cd  ../../../qa
