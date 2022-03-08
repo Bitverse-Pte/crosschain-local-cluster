@@ -66,6 +66,8 @@ function hardhat_deploy_base(){
     yarn hardhat hasRole --role $MULTISEND_ROLE --to $MULTICALl_ADDRESS --network $ETH_NETWORK_NAME
   fi
 
+
+#  yarn hardhat transferoOwnership --gnosissafe $GNOSIS_SAFE_ADDRESS --network $ETH_NETWORK_NAME
 }
 
 
@@ -95,7 +97,7 @@ function tool_check() {
 }
 
 function deploy_base_on_eth() {
-    cd ../helper/xibc-contracts/evm
+    cd ../helper/xibc-contracts-local/evm
 
     tool_check LIGHT_CLIENT_GEN_VALHASH_ADDRESS
     tool_check ACCESS_MANAGER_ADDRESS

@@ -65,7 +65,7 @@ function crate_client_on_tele() {
 }
 
 function create_client_on_eth(){
-  cd ../helper/xibc-contracts/evm
+  cd ../helper/xibc-contracts-local/evm
   yarn hardhat createClientFromFile  --chain teleport --client $TENDERMINT_CLIENT \
     --clientstate  ~/.teleport-relayer/tendermint_clientState.txt \
     --consensusstate ~/.teleport-relayer/tendermint_consensusState.txt \

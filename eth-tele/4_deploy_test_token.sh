@@ -45,7 +45,7 @@ function tool_check() {
 
 
 function deploy_token_on_eth() {
-    cd ../helper/xibc-contracts/erc20
+    cd ../helper/xibc-contracts-local/erc20
 
     hardhat_deploy_token ETHUSDT
 

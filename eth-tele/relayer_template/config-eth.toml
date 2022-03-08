@@ -33,17 +33,17 @@ query_filter = ""
 [Chain.Dest.Eth.Contracts]
 
 [Chain.Dest.Eth.Contracts.Ack_packet]
-Addr = "0x52317cecc08c01bee6cbbc59783f8397f58af92e"
+Addr = ""
 Opt_priv_key = "6395a7c842a08515961888d21d72f409b61fbce96af1e520384e375f301a8297"
 Topic = "AckWritten((uint64,string,string,string,string[],bytes[]),bytes)"
 
 [Chain.Dest.Eth.Contracts.Client]
-Addr = "0x5dd4716daed27d3efb9e118c2195f714dd83278b"
+Addr = ""
 Opt_priv_key = "6395a7c842a08515961888d21d72f409b61fbce96af1e520384e375f301a8297"
 Topic = ""
 
 [Chain.Dest.Eth.Contracts.Packet]
-Addr = "0x52317cecc08c01bee6cbbc59783f8397f58af92e"
+Addr = ""
 Opt_priv_key = "6395a7c842a08515961888d21d72f409b61fbce96af1e520384e375f301a8297"
 Topic = "PacketSent((uint64,string,string,string,string[],bytes[]))"
 

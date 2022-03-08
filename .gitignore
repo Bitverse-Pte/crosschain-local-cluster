@@ -1,5 +1,8 @@
 /.idea/
 
 helper/xibc-contracts
+helper/xibc-contracts-local
+
+eth-tele/nohup.out
 
 helper/tss-bridge/

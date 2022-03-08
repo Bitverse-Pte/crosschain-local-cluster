@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../helper/xibc-contracts/evm
+cd ../helper/xibc-contracts-local/evm
 
 ## bond tokens
 yarn hardhat bindToken --transfer $TRANSFER_ADDRESS \

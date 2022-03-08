@@ -1,0 +1,9 @@
+# rinkeby VARIABLE
+export ETH_NETWORK_NAME=rinkeby
+export SUPER_ADMIN=0xc758534A55ffA37EcC685C0B8D7238D3997002D6
+export ETH_CHAIN_NAME=rinkeby
+export MULTISEND_ROLE=MULTISEND_ROLE
+
+
+export ETH_CHAIN_ID=4
+export ETH_CHAIN_URL=https://rinkeby.infura.io/v3/023f2af0f670457d9c4ea9cb524f0810

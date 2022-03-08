@@ -10,8 +10,6 @@ function change_relayer_config() {
   cp -r tss_config/node1_config_template.toml tss_config/node1_config.toml
   cp -r tss_config/node2_config_template.toml tss_config/node2_config.toml
   cp -r tss_config/node3_config_template.toml tss_config/node3_config.toml
-  cp -r tss_config/bridge_api_config_template.toml tss_config/bridge_api_config.toml
-  cp -r tss_config/relayd_config_template.toml tss_config/relayd_config.toml
 
   a='"'${PACKET_ADDRESS}'"'
   b='"'${TSS_CLIENT}'"'
@@ -23,9 +21,6 @@ function change_relayer_config() {
       sed -i  's/dst_chain_contract = "0xba8174c2163bbd2cb08407c954dd14a1b7c1f0c5"/dst_chain_contract = '$a'/g' tss_config/node1_config.toml
       sed -i  's/dst_chain_contract = "0xba8174c2163bbd2cb08407c954dd14a1b7c1f0c5"/dst_chain_contract = '$a'/g' tss_config/node2_config.toml
       sed -i  's/dst_chain_contract = "0xba8174c2163bbd2cb08407c954dd14a1b7c1f0c5"/dst_chain_contract = '$a'/g' tss_config/node3_config.toml
-
-      sed -i  's/tss_client_address = "0x41076536D9A5b58c9Da94C2b341Ea5258B9De0C1"/tss_client_address = '$b'/g' tss_config/bridge_api_config.toml
-      sed -i  's/tss_client_address = "0x41076536D9A5b58c9Da94C2b341Ea5258B9De0C1"/tss_client_address = '$b'/g' tss_config/relayd_config.toml
   fi
 }
 
@@ -44,9 +39,6 @@ function startTssNode(){
 
   docker run -itd  --net host  --name=tssnode3  -v ~/tssconfig/:/root/tssconfig -v ~/go/bin/tssnode:/usr/bin/tssnode  ubuntu:20.04  tssnode start -c /root/tssconfig/node3_config.toml -p 8083
 
-  docker run -itd --net host --name=tssbridge -v ~/tssconfig/:/root/tssconfig -v ~/go/bin/bridge-api:/usr/bin/bridge-api ubuntu:20.04 bridge-api --config /root/tssconfig/bridge_api_config.toml
-
-  docker run -itd --net host --name=tssrelayd -v ~/tssconfig/:/root/tssconfig -v ~/go/bin/relayd:/usr/bin/relayd ubuntu:20.04 relayd --config /root/tssconfig/relayd_config.toml
 }
 
 sleep 20

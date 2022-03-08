@@ -1,0 +1,9 @@
+# bsc-testnet VARIABLE
+export ETH_NETWORK_NAME=bsctest
+export SUPER_ADMIN=0x927BdC5a64aAD17AC40740b5253B945E868F1cEf
+export ETH_CHAIN_NAME=bsctest
+export MULTISEND_ROLE=MULTISEND_ROLE
+
+
+export ETH_CHAIN_ID=97
+export ETH_CHAIN_URL=https://data-seed-prebsc-2-s2.binance.org:8545
