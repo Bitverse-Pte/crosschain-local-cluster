@@ -1,7 +1,15 @@
 #!/bin/bash
 
 function update_env(){
-  source env_var/rinkeby
+  source env_var/rinkeby.txt
+
+  echo $PWD
+
+  rm -rf ../helper/xibc-contracts/evm/hardhat.config.ts
+  cp -r hardhat-config/hardhat.config.evm.ts  ../helper/xibc-contracts/evm/hardhat.config.ts
+
+  rm -rf ../helper/xibc-contracts/evm/hardhat.config.ts
+  cp -r hardhat-config/hardhat.config.erc20.ts ../helper/xibc-contracts/evm/hardhat.config.ts
 }
 
 function hardhat_deploy_base(){
@@ -49,7 +57,6 @@ function hardhat_deploy_base(){
     yarn hardhat deployProxy --network $NETWORK_NAME
   fi
 
-  yarn hardhat transferoOwnership --gnosissafe $GNOSIS_SAFE_ADDRESS --network $NETWORK_NAME
 }
 
 
@@ -94,6 +101,9 @@ function deploy_base_on_eth() {
     tool_check RCC_ADDRESS
     tool_check MULTICALl_ADDRESS
     tool_check PROXY_ADDRESS
+
+
+    yarn hardhat transferoOwnership --gnosissafe $GNOSIS_SAFE_ADDRESS --network $NETWORK_NAME
 }
 
 update_env

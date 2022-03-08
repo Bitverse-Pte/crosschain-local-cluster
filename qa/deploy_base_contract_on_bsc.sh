@@ -2,6 +2,15 @@
 
 function update_env(){
   source env_var/bsctest.txt
+  echo $PWD
+
+  rm -rf ../helper/xibc-contracts/evm/hardhat.config.ts
+  cp -r hardhat-config/hardhat.config.evm.ts  ../helper/xibc-contracts/evm/hardhat.config.ts
+
+  rm -rf ../helper/xibc-contracts/evm/hardhat.config.ts
+  cp -r hardhat-config/hardhat.config.erc20.ts ../helper/xibc-contracts/evm/hardhat.config.ts
+
+  cd ../helper/xibc-contracts/evm
 }
 
 function hardhat_deploy_base(){
@@ -50,11 +59,7 @@ function hardhat_deploy_base(){
   fi
 
 
-  yarn hardhat transferoOwnership --gnosissafe $GNOSIS_SAFE_ADDRESS --network $NETWORK_NAME
 }
-
-
-
 
 function tool_check() {
   temp=0
@@ -80,8 +85,6 @@ function tool_check() {
 }
 
 function deploy_base_on_eth() {
-    cd ../helper/xibc-contracts/evm
-
     tool_check LIGHT_CLIENT_GEN_VALHASH_ADDRESS
     tool_check ACCESS_MANAGER_ADDRESS
     tool_check CLIENT_MANAGER_ADDRESS
@@ -95,6 +98,9 @@ function deploy_base_on_eth() {
     tool_check RCC_ADDRESS
     tool_check MULTICALl_ADDRESS
     tool_check PROXY_ADDRESS
+
+
+    yarn hardhat transferoOwnership --gnosissafe $GNOSIS_SAFE_ADDRESS --network $NETWORK_NAME
 }
 
 update_env
