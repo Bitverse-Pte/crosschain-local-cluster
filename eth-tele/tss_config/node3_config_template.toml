@@ -31,7 +31,7 @@ dst_chain = "eth"
 dst_chain_alias="ethmock"
 dst_chain_url = "http://localhost:9000"
 dst_chain_id = "3133789"
-dst_chain_contract = "0xdb9800e704e9449a30853f4b45cecb9aa56049d7"
+dst_chain_contract = "0xba8174c2163bbd2cb08407c954dd14a1b7c1f0c5"
 # database directory; default: 'base_dir' will be used
 db_dir = "/root/.tssnode/db"
 ###############################################################################

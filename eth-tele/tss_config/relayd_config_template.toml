@@ -12,7 +12,7 @@ addr = ":9000"
 [eth]
 
 enable = true
-tss_client_address = "0x5a15c9f265006bfc1c82fa534067e1231c4127d1"
+tss_client_address = "0x41076536D9A5b58c9Da94C2b341Ea5258B9De0C1"
 url = "http://localhost:9545"
 
 [tele]
