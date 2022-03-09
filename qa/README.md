@@ -1,7 +1,7 @@
 # qa enviorment
 
 ### download xibc-contracts or move
-```aidl
+```shell
 source download_helper.sh
 ```
 
