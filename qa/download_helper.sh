@@ -27,7 +27,7 @@ function download_xibc() {
     cd ../../
   else
     echo "文件夹存在"
-    cd ../../eth-tele
+    cd ../eth-tele
   fi
 }
 
