@@ -57,8 +57,6 @@ function hardhat_deploy_base(){
   if [ "$1" = "PROXY_ADDRESS" ]; then
     yarn hardhat deployProxy --network $NETWORK_NAME
   fi
-
-
 }
 
 function tool_check() {
@@ -80,7 +78,7 @@ function tool_check() {
 
   done
 
-  echo "deploy $1 success!"
+  echo "deploy $1 success!!"
   source env.txt
 }
 
@@ -99,8 +97,7 @@ function deploy_base_on_eth() {
     tool_check MULTICALl_ADDRESS
     tool_check PROXY_ADDRESS
 
-
-    yarn hardhat transferoOwnership --gnosissafe $GNOSIS_SAFE_ADDRESS --network $NETWORK_NAME
+    yarn hardhat transferOwnership --gnosissafe $GNOSIS_SAFE_ADDRESS --network $NETWORK_NAME
 }
 
 update_env

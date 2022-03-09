@@ -17,7 +17,10 @@ import "./tasks/deployMultiCall"
 import "./tasks/deployRcc"
 import "./tasks/deployProxy"
 import "./tasks/deployAccessManager"
+import "./tasks/deployTestPayable"
 import "./tasks/transfer"
+import "./tasks/deployAll"
+import "./tasks/deployTestContracts"
 
 // @ts-ignore
 module.exports = {
