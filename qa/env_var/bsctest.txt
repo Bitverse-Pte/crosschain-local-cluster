@@ -7,6 +7,10 @@ export MULTISEND_ROLE=MULTISEND_ROLE
 export ETH_CHAIN_ID=97
 export ETH_CHAIN_URL=https://data-seed-prebsc-2-s2.binance.org:8545
 
+export BSC_RELAYER=0x06D4be503DA28F0B0A401bbbCB268F9D49bC16B2
+export BSC_NETWORK_NAME=bsctest
+
+
 # account address:0x66d5f082726a05a9b409ce1de4e06b6ad8d5cb0e
 
 export CLIENT_STATE_CODEC_ADDRESS=0xb9b9b790ae9ec4111594c6edab082fe027ee35a4

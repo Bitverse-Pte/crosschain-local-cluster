@@ -1,0 +1,17 @@
+export NETWORK_NAME=teleport
+export CHAIN_ID=teleport_7001-1
+export TELE_CHAIN_URL_26657=tcp://abd46ec6e28754f0ab2aae29deaa0c11-1510914274.ap-southeast-1.elb.amazonaws.com:26657
+export TELE_CHAIN_URL_9090=abd46ec6e28754f0ab2aae29deaa0c11-1510914274.ap-southeast-1.elb.amazonaws.com:9090
+export VOTING_PERIOD=180
+export TM_CLIENT_HEIGHT=5000
+
+
+export ETH_CHAIN_ID=4
+export ETH_CHAIN_NAME=rinkeby
+export ETH_CHAIN_URL=https://rinkeby.infura.io/v3/023f2af0f670457d9c4ea9cb524f0810
+export ETH_NETWORK_NAME=rinkeby
+
+export BSC_CHAIN_ID=97
+export BSC_CHAIN_NAME=bsc-testnet
+export BSC_CHAIN_URL=https://data-seed-prebsc-2-s2.binance.org:8545
+export BSC_NETWORK_NAME=bsctest
